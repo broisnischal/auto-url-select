@@ -3,6 +3,30 @@ import * as vscode from "vscode";
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "auto-url-select" is now active!');
 
+  // const disposable = vscode.workspace.onDidChangeTextDocument((event) => {
+  //   console.log(event);
+
+  //   const editor = vscode.window.activeTextEditor;
+  //   if (!editor) {
+  //     console.log("returned");
+  //     return;
+  //   }
+
+  //   const selectedText = editor.document.getText(editor.selection);
+  //   if (selectedText) {
+  //     console.log(`Double-clicked text: "${selectedText}"`);
+  //     console.log(`Selected range: ${editor.selection}`);
+  //   }
+
+  //   if (!editor.selection.isEmpty) {
+  //     // Get the selected text
+  //     const selectedText = editor.document.getText(editor.selection);
+  //     console.log("ere");
+  //     console.log(`Selected text: "${selectedText}"`);
+  //     console.log(`Selected range: ${editor.selection}`);
+  //   }
+  // });
+
   const disposable = vscode.window.onDidChangeTextEditorSelection((event) => {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
@@ -26,15 +50,9 @@ export function activate(context: vscode.ExtensionContext) {
       const matchedUrls = parts.filter((part) => urlRegex.test(part));
 
       if (matchedUrls) {
-        // const selectedUrl = matchedUrls.find((url) => url.includes(selectedText));
+        console.log("Matched URLs:", matchedUrls);
 
-        const cursorPosition = editor.selection.start.character;
-
-        const selectedUrl = matchedUrls.find((url) => {
-          const urlStartPosition = selectedLine.text.indexOf(url);
-          const urlEndPosition = urlStartPosition + url.length;
-          return cursorPosition >= urlStartPosition && cursorPosition <= urlEndPosition;
-        });
+        const selectedUrl = matchedUrls.find((url) => url.includes(selectedText));
 
         if (selectedUrl) {
           console.log("Selected : ", selectedUrl);
@@ -43,12 +61,12 @@ export function activate(context: vscode.ExtensionContext) {
           if (urlStartPosition !== -1) {
             const startPosition = new vscode.Position(
               editor.selection.start.line,
-              selectedLine.range.start.character + urlStartPosition
+              urlStartPosition
             );
             // const startPosition = new vscode.Position(selectedLine.lineNumber, urlStartPosition);
             const endPosition = new vscode.Position(
-              editor.selection.start.line,
-              selectedLine.range.start.character + urlStartPosition + selectedUrl.length
+              selectedLine.lineNumber,
+              urlStartPosition + selectedUrl.length
             );
             const newSelection = new vscode.Selection(startPosition, endPosition);
             editor.selection = newSelection;
