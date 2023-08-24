@@ -1,12 +1,9 @@
 import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('Congratulations, your extension "auto-url-select" is now active!');
-
   const disposable = vscode.window.onDidChangeTextEditorSelection((event) => {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
-      console.log("Editor not available");
       return;
     }
 
@@ -37,7 +34,6 @@ export function activate(context: vscode.ExtensionContext) {
         });
 
         if (selectedUrl) {
-          console.log("Selected : ", selectedUrl);
           const urlStartPosition = selectedLine.text.indexOf(selectedUrl);
 
           if (urlStartPosition !== -1) {
