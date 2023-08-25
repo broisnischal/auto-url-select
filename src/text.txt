@@ -1,1 +1,0 @@
-print("https://google.com/nasdf/asdfklj?asdf=asdf", "https://facebook.com/nasdf/asdfklj?asdf=asdf")
