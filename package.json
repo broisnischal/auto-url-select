@@ -10,7 +10,7 @@
   "author": {
     "name": "Nischal Dahal",
     "email": "neeswebservice@gmail.com",
-    "url": "https://github.com/neeswebservices/use-milisecond"
+    "url": "https://github.com/neeswebservices/auto-url-select"
   },
   "icon": "./img/128.png",
   "categories": [
@@ -45,7 +45,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/neeswebservices/auto-select-url"
+    "url": "https://github.com/neeswebservices/auto-url-select"
   },
   "release": {
     "repositoryUrl": "https://github.com/neeswebservices/auto-url-select"
