@@ -1,7 +1,8 @@
 {
   "name": "auto-url-select",
-  "displayName": "auto url select",
-  "description": "A url auto selector without having to go end of the line and then pressing shift then selecting to the first of the test and then select the url. instead you can install this extension, when you double click it selects the complete url.",
+  "displayName": "Auto Select Url",
+  "publisher": "neeswebservice",
+  "description": "A url auto selector complete url by double clicking anywhere in the url.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.81.0"
