@@ -3,7 +3,7 @@
   "displayName": "Auto Select Url",
   "publisher": "nischal",
   "description": "A url auto selector complete url by double clicking anywhere in the url.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.81.0"
   },
