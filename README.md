@@ -12,4 +12,4 @@ Auto select url is licensed under the MIT License. See the [LICENSE](LICENSE) fi
 
 ## Credits
 
-Auto select url is created by Nischal Dahal and is maintained by neeswebservices Inc. If you have any feedback or suggestions, please feel free to [contact us](mailto:neeswebservice@gmail.com) or [submit an issue](https://github.com/neeswebservices/auto-url-select/issue) on GitHub.
+Auto select url is created by Nischal Dahal and is maintained by neeswebservices Inc. If you have any feedback or suggestions, please feel free to [contact us](mailto:neeswebservice@gmail.com) or [submit an issue](https://github.com/neeswebservices/auto-url-select/issues) on GitHub.
